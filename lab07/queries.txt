@@ -1,0 +1,36 @@
+=====================================
+                Task 1
+=====================================
+
+CREATE TABLE `s101094376_db`.`vehicles` ( 
+    `car_id` INT(11) NOT NULL AUTO_INCREMENT , 
+    `make` VARCHAR(25) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL , 
+    `model` VARCHAR(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL , 
+    `price` FLOAT NOT NULL , 
+    `yom` INT(11) NOT NULL , 
+    PRIMARY KEY (`car_id`)
+) ENGINE = InnoDB;
+
+=====================================
+                Task 2
+=====================================
+
+1: All records
+
+SELECT * FROM 'cars'
+
+2: Make, Model, and Price, sorted by make and Model
+
+SELECT make, model, price FROM `cars` ORDER BY make, model
+
+3: The make and model of the cars which cost $20,000.00 or more
+
+SELECT make, model FROM `cars` WHERE price >= 20000 
+
+4: The make and model of the cars which cost below $15,000.00
+
+SELECT make, model FROM `cars` WHERE price < 15000
+
+5: The average price of cars for similar make.
+
+SELECT make, AVG(price) FROM `cars` GROUP BY make
