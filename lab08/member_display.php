@@ -19,9 +19,9 @@
         echo "<p>connection didn't work</p>";
     } else {
 
-        $sql_table = "cars";
+        $sql_table = "vipmembers";
 
-        $query = "SELECT car_id, make, model, price FROM cars";
+        $query = "SELECT member_id, fname, lname FROM vipmembers";
 
         $result = mysqli_query($conn, $query);
     
@@ -30,14 +30,13 @@
             echo "<p>Query didn't work</p>\n";
         } else {
             echo "<table border=\"1\">\n";
-            echo "<tr>\n"."<th>Car ID</th>\n"."<th>Make</th>\n"."<th>Model</th>\n"."<th>Price</th>\n"."</tr>\n";
+            echo "<tr>\n"."<th>Member ID</th>\n"."<th>First name</th>\n"."<th>Last Name</th>\n"."</tr>\n";
     
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>\n";
-                echo "<td>",$row["car_id"], "</td>\n";
-                echo "<td>",$row["make"], "</td>\n";
-                echo "<td>",$row["model"], "</td>\n";
-                echo "<td>",$row["price"], "</td>\n";
+                echo "<td>",$row["member_id"], "</td>\n";
+                echo "<td>",$row["fname"], "</td>\n";
+                echo "<td>",$row["lname"], "</td>\n";
                 echo "</tr>\n";
             }
             echo "</table>";
